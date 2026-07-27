@@ -1,0 +1,70 @@
+:root {
+  --bg: #0a0e0a;
+  --fg: #33ff33;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+#loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+#loading-bar-outer {
+  width: 300px;
+  height: 20px;
+  border: 2px solid var(--fg);
+}
+
+#loading-bar-inner {
+  height: 100%;
+  width: 0%;
+  background: var(--fg);
+  animation: fillBar 2s linear forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+#screen {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#output div {
+  margin: 2px 0;
+}
+
+#prompt-line {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+#cmd {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  caret-color: var(--fg);
+  font-family: inherit;
+  font-size: inherit;
+}
